@@ -107,7 +107,7 @@ info = ep.info
 #### Words
 
 ``` Python
-words = ep.words.test # return words of EmotaPal
+words = ep.words.text # return words of EmotaPal
 sentiment = ep.words.sentiment # return sentiment of EmotaPal's words
 ```
 
