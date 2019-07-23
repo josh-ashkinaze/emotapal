@@ -1,5 +1,9 @@
 # EmotaPal
 
+```
+pip install emotapal 
+```
+
 ## Table of Contents
 + [About](#about)
 + [Core Data](#data)
