@@ -181,13 +181,13 @@ class WordPal():
 class ColorPal():
 	
 	"""
-	A ColorPal is a list of colors associated with a list of words. 
+	A ColorPal is a list of colors that is associated with a list of words. 
 
 	Each ColorPal contains information about its colors, as well as a method
 	for displaying itself as a color palette. 
 
 	Attributes:
-		colors (list): a list of colors represented `[R, G, B]` values
+		colors (list): a list of colors 
 	"""
 	
 	def __init__(self, color_list=None):
@@ -195,12 +195,12 @@ class ColorPal():
 	
 	@property
 	def as_rgb(self):
-		"""Returns a list of colors, each color a lists of RGB values."""
+		"""Returns a list of colors, each color a list of RGB values."""
 		return self._colors
 
 	@property 
 	def as_hex(self):
-		"""Returns a list of colors, each color HEX string."""
+		"""Returns a list of colors, each color a HEX string."""
 		return [helpers.rgb2hex(c) for c in self._colors]
 
 	def display(self, save_img=False):
