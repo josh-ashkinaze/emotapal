@@ -88,7 +88,7 @@ class EmotaPal():
 			return self.from_image(img, ncolors)
 	
 	def from_image(self, img, ncolors):
-		"""Constructs an EmotaPal from an image"""
+		"""Constructs an EmotaPal from an image."""
 		colorthief = ColorThief(img)
 		if ncolors == 1:
 			clr =  colorthief.get_color(quality=1)
