@@ -62,7 +62,7 @@ class EmotaPal():
 		"""
 		Returns an EmotaPal from a gimg search. 
 
-		To return an EmotaPal, this function first finds the url
+		To return an EmotaPal, this method first finds the url
 		top nimages for a query. This method then returns
 		the dominant color of each image. The resulting color set 
 		is treated as a color palette, and is fed into the from_colors
