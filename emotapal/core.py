@@ -44,7 +44,7 @@ class EmotaPal():
 	
 	@property
 	def words(self):
-		"""Instantiate a WordPal object based on EmotaPal's words"""
+		"""Instantiate a WordPal object based on EmotaPal's words."""
 		return WordPal([x['emotion'] for x in self._info], self.unique_words)
 	
 	@property
