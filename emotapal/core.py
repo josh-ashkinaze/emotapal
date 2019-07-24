@@ -125,7 +125,6 @@ class EmotaPal():
 					"distance": distance from input color to emotion color, 
 					"color": input color
 		}
-		
 		"""
 		color = helpers.parse_color(clr)
 		emotion = self.clf.predict([color])[0]
@@ -145,10 +144,8 @@ class WordPal():
 
 	Attributes:
 		_text (list): a list of words 
-		-unique(bool): store only unique words
-
+		_unique(bool): store only unique words
 	"""
-
 	def __init__(self, word_list=None, unique=False):
 		self._text = word_list 
 		self.unique =unique
@@ -169,11 +166,7 @@ class WordPal():
 	
 	@property 
 	def text(self):
-		"""
-		Returns the text of a word palette
-
-		
-		"""
+		"""Returns the text of a word palette"""
 		if self.unique:
 			return list(OrderedDict.fromkeys(self._text))
 		else:
@@ -211,7 +204,6 @@ class ColorPal():
 		Note that colors are displayed in descending order of best match. 
 		So the first color is the color with the shortest distance to an emotion, etc. 
 		"""
-
 		clrs = self.as_hex
 		sns.set(context="poster") # Make big 
 		sns.palplot(clrs) # Create color palette 
