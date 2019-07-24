@@ -145,6 +145,7 @@ class WordPal():
 
 	Attributes:
 		_text (list): a list of words 
+		-unique(bool): store only unique words
 
 	"""
 
