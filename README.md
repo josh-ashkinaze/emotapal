@@ -17,7 +17,7 @@ An EmotaPal is a palette of words and colors.
 Just as a 'color palette' describes the colors of some visual object, an 'emotion palette' describes the emotions felt from a visual object. An EmotaPal combines both pieces (visual and psychological) of information. 
 
 ## Core Data <a name = "data"></a>
-Functionally, this library provides methods to associate emotions with colors through an EmotaPal object. This association is made by predicting the emotion of a color with a K Nearest Neighbors Classifier trained on a dataset with features ```[Emotion, Color]```. That dataset was constructed by (1) sourcing a list of emotion words, (2) downloading top Google Image results for each feeling word, and (3) parsing the dominant color of each Google Image. 
+Functionally, this library provides methods to associate emotions with colors through an EmotaPal object. That object relies on a KNN model which predicts emotions from colors. The model was trained on a dataset constructed by parsing the dominant color of 100 Google Image results for 264 emotions. 
 
 [For more information on the data, please read here.](https://github.com/josh-ashkinaze/Emotion-Colors/blob/master/README.md)
 
