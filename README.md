@@ -19,7 +19,7 @@ Just as a 'color palette' describes the colors of some visual object, an 'emotio
 ## Core Data <a name = "data"></a>
 Functionally, this library provides methods to associate emotions with colors through an EmotaPal object. This association is made by predicting the emotion of a color with a K Nearest Neighbors Classifier trained on a dataset with features ```[Emotion, Color]```. That dataset was constructed by (1) sourcing a list of emotion words, (2) downloading top Google Image results for each feeling word, and (3) parsing the dominant color of each Google Image. 
 
-[For more information, please read here.](https://github.com/josh-ashkinaze/Emotion-Colors/blob/master/README.md)
+[For more information on the data, please read here.](https://github.com/josh-ashkinaze/Emotion-Colors/blob/master/README.md)
 
 ## Use Cases <a name = "usecases"></a>
 
