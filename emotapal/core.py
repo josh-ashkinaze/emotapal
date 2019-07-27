@@ -4,7 +4,7 @@
 from colorthief import ColorThief # grab color info 
 from sklearn.externals import joblib # open our classifier
 from collections import OrderedDict # find unique list values, maintaining order
-import helpers as helpers # helper functions 
+import emotapal.helpers as helpers # helper functions 
 import seaborn as sns # make color palette
 import matplotlib.pyplot as plt # assist with color palette
 import os, sys # point to the right places
