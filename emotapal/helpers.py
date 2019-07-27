@@ -4,15 +4,14 @@
 from google_images_download import google_images_download  
 import sys, io
 from urllib.request import urlopen
+from colorthief import ColorThief 
 import seaborn as sns
 import matplotlib.pyplot as plt
 from datetime import datetime
 from requests.exceptions import HTTPError
 from urllib.error import HTTPError
 
-
-"""Helper functions for the EmotaPal class"""
-
+"""Helper functions for the emotapal package"""
 
 def parse_color(clr):
 	"""Returns an RGB list if color is RGB, and converts a hex color to RGB otherwise."""
@@ -53,7 +52,7 @@ def get_gimg_urls(search_term, n):
 	return urls
 
 def write_gimg_urls(search_term, n):
-	"""Write N Google Image urls for a search term S to a text file."""
+	"""Write NnGoogle Image urls for a search term S to a text file."""
 	f = open('URLS.txt', 'w') # Open text file to write print output to
 	orig_stdout, sys.stdout = sys.stdout, f # Keep location of original sys.stdout  
 	response = google_images_download.googleimagesdownload() # Get images
@@ -69,6 +68,18 @@ def parse_gimg_urls(urls):
 	urls = [content[j-1][11:-1] for j in range(len(content)) if content[j][:9] == 'Completed']
 	return urls    
 
+def gimg_color_reader(img):
+	"""
+	Catch ColorThief exceptions. 
+
+	For the from_img and from_url constructors, let ColorThief 
+	*throw* exceptions if an image won't load. But if there are many images, 
+	it is not fatal if some don't load. 
+	"""
+	try: 
+		return ColorThief(img).get_color(quality=1)
+	except:
+		pass
 
 def label_palette(clrs, ax, save_img):
 	"""Labels a custom color palette"""
