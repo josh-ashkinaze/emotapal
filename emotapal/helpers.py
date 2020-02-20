@@ -14,7 +14,7 @@ from urllib.error import HTTPError
 """Helper functions for the emotapal package"""
 
 def parse_color(clr):
-	"""Returns an RGB list if color is RGB, and converts a hex color to RGB otherwise."""
+	"""Returns an RGB list if color is RGB, and converts a hex color to RGB otherwise"""
 	if type(clr) == str:
 		return hex2rgb(clr)
 	elif type(clr) == list:
@@ -23,17 +23,17 @@ def parse_color(clr):
 		return list(clr)
 
 def hex2rgb(color):
-	"""Converts a hex str to RGB list."""
+	"""Converts a hex str to RGB list"""
 	rgb_clr = list(tuple(bytes.fromhex("{}".format(color.strip("#")))))
 	return rgb_clr
 
 def rgb2hex(color):
-	"""Converts an RGB tupple or list to a hex string."""
+	"""Converts an RGB tupple or list to a hex string"""
 	hex_clr = "#" + bytes(color).hex()
 	return hex_clr
 
 def read_web_image(url):
-	"""Tries to read in an image via url."""
+	"""Tries to read in an image via url"""
 	result = "Failed"
 	try:
 		result = io.BytesIO(urlopen(url).read())
@@ -46,13 +46,13 @@ def read_web_image(url):
 	return result 
 
 def get_gimg_urls(search_term, n):
-	"""Returns n Google Image urls for a given search term."""
+	"""Returns `n` Google Image urls for a given `search_term`"""
 	f = write_gimg_urls(search_term, n)
 	urls = parse_gimg_urls(f)
 	return urls
 
 def write_gimg_urls(search_term, n):
-	"""Write NnGoogle Image urls for a search term S to a text file."""
+	"""Write `n` Google Image urls for a `search_term` to a text file"""
 	f = open('URLS.txt', 'w') # Open text file to write print output to
 	orig_stdout, sys.stdout = sys.stdout, f # Keep location of original sys.stdout  
 	response = google_images_download.googleimagesdownload() # Get images
@@ -63,7 +63,7 @@ def write_gimg_urls(search_term, n):
 	return f
 
 def parse_gimg_urls(urls):
-	"""Parses output of Gogle Image results to return urls."""
+	"""Parses output of Gogle Image results to return urls"""
 	with open('URLS.txt') as f: content = f.readlines()
 	urls = [content[j-1][11:-1] for j in range(len(content)) if content[j][:9] == 'Completed']
 	return urls    
@@ -72,7 +72,7 @@ def gimg_color_reader(img):
 	"""
 	Catch ColorThief exceptions. 
 
-	For the from_img and from_url constructors, let ColorThief 
+	For the `from_img` and `from_url` constructors, let ColorThief 
 	*throw* exceptions if an image won't load. But if there are many images, 
 	it is not fatal if some don't load. 
 	"""
