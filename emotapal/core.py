@@ -63,10 +63,10 @@ class EmotaPal():
 	
 	def from_gimg(self, query, nimages):
 		"""
-		Returns an EmotaPal from a gimg search. 
+		Returns an EmotaPal from a gimg search
 
-		To return an EmotaPal, this function first finds the url
-		top nimages for a query. This method then returns
+		To return an EmotaPal, this function first finds the 
+		top `nimages` for a query. It then returns
 		the dominant color of each image. The resulting color set 
 		is treated as a color palette, and is fed into the from_colors
 		constructor method. 
@@ -84,7 +84,7 @@ class EmotaPal():
 		return self.from_colors(clrs)
 
 	def from_url(self, url, ncolors):
-		"""Constructs an EmotaPal from a url."""
+		"""Constructs an EmotaPal from a url"""
 		img = helpers.read_web_image(url)
 		if img != "Failed":
 			return self.from_image(img, ncolors)
@@ -100,7 +100,7 @@ class EmotaPal():
 			return self.from_colors(clrs)  
 	
 	def from_colors(self, clrs):
-		"""Constructs an EmotaPal from a set of colors."""
+		"""Constructs an EmotaPal from a set of colors"""
 		try:
 			matches = [self.nearest_emotion(c) for c in clrs]
 			self._info = self.parse_matches(matches)
@@ -136,7 +136,7 @@ class EmotaPal():
 		return results
 
 	def parse_matches(self, data):
-		""" Returns the topn matches by shortest distance to input color. """
+		"""Returns the `topn` matches by shortest distance to input color"""
 		top_matches = sorted(data, key=lambda x: x['distance'])[:self.topn]
 		return top_matches
 
@@ -185,7 +185,7 @@ class ColorPal():
 	for displaying itself as a color palette. 
 
 	Attributes:
-		colors (list): a list of colors represented `[R, G, B]` values
+		colors (list): a list of colors represented as `[R, G, B]` values
 	"""
 	
 	def __init__(self, color_list=None):
@@ -193,12 +193,12 @@ class ColorPal():
 	
 	@property
 	def as_rgb(self):
-		"""Returns a list of colors, each color a lists of RGB values."""
+		"""Returns a list of colors, each color a list of RGB values"""
 		return self._colors
 
 	@property 
 	def as_hex(self):
-		"""Returns a list of colors, each color HEX string."""
+		"""Returns a list of colors, each color a HEX string."""
 		return [helpers.rgb2hex(c) for c in self._colors]
 
 	def display(self, save_img=False):
