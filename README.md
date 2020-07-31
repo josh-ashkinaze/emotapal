@@ -1,5 +1,7 @@
 # EmotaPal
 
+Update: Library is depreciated, will be updating soon to accomodate new versions of dependencies 
+
 ```
 pip install emotapal 
 ```
