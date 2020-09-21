@@ -1,6 +1,6 @@
 # EmotaPal
 
-Update: Library is depreciated, will be updating soon to accomodate new versions of dependencies 
+September 20th, 2020 Update: Library is currently depreciated, will be updating after holidays to accomodate new versions of dependencies. 
 
 ```
 pip install emotapal 
