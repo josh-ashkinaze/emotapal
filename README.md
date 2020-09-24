@@ -1,6 +1,6 @@
 # EmotaPal
 
-September 20th, 2020 Update: Library is currently depreciated, will be updating after holidays to accomodate new versions of dependencies. 
+Warning: As of September 20th, 2020 the library is currently depreciated; Will be updating when I find a workaround to Google Images API restrictions. 
 
 ```
 pip install emotapal 
